@@ -3,57 +3,12 @@
 <img src="./media/image33.png" width="32%"/> 
 <img src="./media/image34.png" width="32%"/>
 
-**1. System description**
+## 1. System description
 
 The system developed by the author is the system for cyclists, which allow them to monitor the cyclist parameters (speed, distance, cadence, calories usage, trip time).
 A cyclist can view those parameters on his smartphone. In order to view such data, cyclist needs to install an Android application. The name of the application is Cyclist Assistant. As the name suggest, application provides some assistance during cycling. The assistance in this context are messages displayed on smartphone’s screen, suggesting the cyclist gear usage, depending on various factors. Those factors are a bicycle type, a current gear, a current slope of the terrain. The application offers cyclists an additional functionality. Cyclist can create multiple accounts, add multiple bicycles and view statistics of a current and all trips.
 
-**2. Hardware design**
-
-**2.1 Circuit diagrams**
-
-Circuit diagram on **Figure 1.7** demonstrates the construction of the device capable of doing computation, actuation and sensing. Embedding all electronic components into a bicycle, what are present on the diagram, would make a bicycle the real Thing, according to IoT definition, but for needs of project the author placed them in a plastic case, which is situated on a bicycle’s frame.
-
-<img src="./media/image3.png" width="66%"/>
-
-**Figures 1.8, 1.9** and **2.0** demonstrates how the device functions in different cases.
-
-<img src="./media/image4.png" width="66%"/>
-
-On **Figure 1.8**, the device batteries are charged by electrical current source – a dynamo. The device is disabled. Bicycle is going.
-
-<img src="./media/image5.png" width="66%"/>
-
-On **Figure 1.9** the device is connected with dynamo and is enabled. Batteries are not charged. Bicycle is going.
-
-<img src="./media/image6.png" width="66%"/>
-
-On **Figure 2.0** the device is enabled and powered by the batteries. Bicycle is not going.
-
-Batteries play important role in the device, because they allow to work the device, regardless of bicycle state (going / not going).
-
-The project required connecting two reed switches into the RaspberryPi board.
-The reed switch is an electrical switch operated by an applied magnetic field.
-
-![](./media/image7.png)
-
-First reed switch is required to monitor speed, distance and time of a bicycle trip.
-Second reed switch is required to monitor cadence.
-Combination of two reed switches allows also for calculation of gears ratio: gear inches.
-
-**Figure 2.1** is a circuit diagram demonstrating, how reed swithces are connected with the RaspberryPi GPIO.
-
-![](./media/image8.png)
-
-**2.2 GPIO**
-
-![](./media/image9.png)
-
-GPIO is the interface for communication between components of a computer system, such as a microprocessor or various peripherals. Outputs (pins) of such a device can serve both as inputs and outputs and are usually configurable. GPIO pins are often grouped in ports.
-
-![](./media/image11.png)
-
-**3 Software implementation**
+## 3 Software implementation**
 
 The whole system for cyclist consist of the Android application, running on a smartphone and server application running on a computer platform, placed on a bicycle. Android application is written in Java language. Server application is written in JavaScript, which runs with NodeJS – **“**cross-platform runtime environment for server-side and networking application**”.
 
@@ -353,6 +308,54 @@ the screen in **Picture 3.7** is visible.
 
 **
 **
+
+## 2. Hardware design
+
+### 2.1 Circuit diagrams**
+
+Circuit diagram on **Figure 1.7** demonstrates the construction of the device capable of doing computation, actuation and sensing. Embedding all electronic components into a bicycle, what are present on the diagram, would make a bicycle the real Thing, according to IoT definition, but for needs of project the author placed them in a plastic case, which is situated on a bicycle’s frame.
+
+<img src="./media/image3.png" width="66%"/>
+
+**Figures 1.8, 1.9** and **2.0** demonstrates how the device functions in different cases.
+
+<img src="./media/image4.png" width="66%"/>
+
+On **Figure 1.8**, the device batteries are charged by electrical current source – a dynamo. The device is disabled. Bicycle is going.
+
+<img src="./media/image5.png" width="66%"/>
+
+On **Figure 1.9** the device is connected with dynamo and is enabled. Batteries are not charged. Bicycle is going.
+
+<img src="./media/image6.png" width="66%"/>
+
+On **Figure 2.0** the device is enabled and powered by the batteries. Bicycle is not going.
+
+Batteries play important role in the device, because they allow to work the device, regardless of bicycle state (going / not going).
+
+The project required connecting two reed switches into the RaspberryPi board.
+The reed switch is an electrical switch operated by an applied magnetic field.
+
+![](./media/image7.png)
+
+First reed switch is required to monitor speed, distance and time of a bicycle trip.
+Second reed switch is required to monitor cadence.
+Combination of two reed switches allows also for calculation of gears ratio: gear inches.
+
+**Figure 2.1** is a circuit diagram demonstrating, how reed swithces are connected with the RaspberryPi GPIO.
+
+![](./media/image8.png)
+
+### 2.2 GPIO**
+
+![](./media/image9.png)
+
+GPIO is the interface for communication between components of a computer system, such as a microprocessor or various peripherals. Outputs (pins) of such a device can serve both as inputs and outputs and are usually configurable. GPIO pins are often grouped in ports.
+
+![](./media/image11.png)
+
+
+
 
 1.  <span id="_Toc416783272" class="anchor"></span>**Hardware implementation**
 
