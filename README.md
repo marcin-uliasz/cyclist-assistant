@@ -208,7 +208,7 @@ Settings are divided into four sections: currently selected bicycle’s, bicycle
 
 Toggle allowing user to select whether his bicycle is loaded with bags or not. This setting reflects displaying gear usage suggestions and cyclist’s calories consumption.
 
-<img src="./media/image36.png" width="20%"/>
+<img src="./media/image36.png" width="26%"/>
 
 When bicycle is loaded with bag it is heavier. This fact causes that calories consumption is higher and “use lower gear” suggestion will appear earlier on less steep terrain.
 
@@ -218,12 +218,12 @@ Field allowing user to change his current bicycle.
 (Assuming system is enabled and user placed RaspberryPi board and smartphone on another bicycle).  
 After touching the field, confirmation dialog appears:  
 
-<img src="./media/image39.png" width="20%"/>  
+<img src="./media/image39.png" width="26%"/>  
 
 When user will touch **No** dialog will be closed and no further action will be taken.  
 When user will touch **Yes**, dialog with bicycles list of current user will appear, as it is showed below:  
 
-<img src="./media/image41.png" width="20%"/>  
+<img src="./media/image41.png" width="26%"/>  
 
 After selecting certain bicycle dashboard and statistics of current trip will be reset. 
 Server on RaspberryPi will start measuring parameters taking into account details of newly selected bicycle  
@@ -237,7 +237,7 @@ Manage bicycles form allows user to add new bicycles, edit and remove existing o
 
 User can open this form, by touching **Manage** button:  
 
-<img src="./media/image45.png" width="20%"/>  
+<img src="./media/image45.png" width="26%"/>  
 
 Bicycle marked as green is currently selected:  
 
@@ -247,7 +247,7 @@ Bicycle marked as green is currently selected:
 
 **D) Show tabs names**  
 
-<img src="./media/image57.png" width="20%"/>  
+<img src="./media/image57.png" width="26%"/>  
 
 User can decide, whether tabs names should be visible or not.  
 When they are visible, then currently visible tab is highlighted. Tabs names are also touchable.  
@@ -255,7 +255,7 @@ Hiding tabs, user can gain some space for the graphical interface.
 
 **E) Edit profile**  
 
-<img src="./media/image59.png" width="20%"/>
+<img src="./media/image59.png" width="26%"/>
 
 User has got an option for editing his profile. In order to open edit form, he has to touch **Edit** button.  
 
@@ -265,11 +265,11 @@ User has got an option for editing his profile. In order to open edit form, he h
 
 **F) Remove profile**  
 
-<img src="./media/image62.png" width="20%"/>
+<img src="./media/image62.png" width="26%"/>
 
 User has got an option to remove his profile.  
 
-<img src="./media/image65.png" width="20%"/>  
+<img src="./media/image65.png" width="26%"/>  
 
 After touching remove button, profile, statistics and all bicycles of current user will be removed.  
 After successful removal, the screen shown below is visible:  
@@ -278,7 +278,7 @@ After successful removal, the screen shown below is visible:
 
 **G) Calibrate slope sensor**  
 
-<img src="./media/image68.png" width="20%"/>  
+<img src="./media/image68.png" width="26%"/>  
 
 Slope sensor is a simplification for the accelerometer and magnetometer sensors, located in a smartphone, which are used to calculate the slope of a terrain. Slope is based on the position of a smartphone. When user place the smartphone on his bicycle’s handlebar, accelerometer and magnetometer sensors can be used to calculate a slope of a terrain.
 
@@ -286,7 +286,7 @@ User, in order to see the screen of the smartphone, during cycling, will place i
 
 **H) Reset slope sensor**  
 
-<img src="./media/image70.png" width="20%"/>
+<img src="./media/image70.png" width="26%"/>
 
 After slope sensor calibration user can always reset slope sensor.  
 Resetting will remove a percentage offset and slope sensor will output the real values.  
@@ -352,7 +352,7 @@ Plastic case was attached to the bicycle.
 
 Reed switches and magnets was placed on the one spoke of front bicycle wheel and on the arm of crank. Cables of reed switches were connected to the plastic case via Molex sockets.  
 
-<img src="./media/image75.png" width="70%"/>
+<img src="./media/image75.png" width="65%"/>
 
 ### 4.3 Smartphone
 
@@ -367,77 +367,65 @@ Third party libraries, resources and tools used in the project:
 
 **Android libraries:** 
 
-- **PagerSlidingTabStrip**
-
-> “Interactive paging indicator widget, compatible with the ViewPager from the Android Support Library.”  
+> **PagerSlidingTabStrip**
+“Interactive paging indicator widget, compatible with the ViewPager from the Android Support Library.”  
 Version: 1.0.9  
 Page: https://github.com/jpardogo/PagerSlidingTabStrip  
 
-- **Android-Bootstrap**
-
-> Bootstrap based style for Android  
+> **Android-Bootstrap**
+Bootstrap based style for Android  
 Page: https://github.com/Bearded-Hen/Android-Bootstrap  
 
-- **AndroidSVG**  
-
-> AndroidSVG is a SVG parser and renderer for Android  
+> **AndroidSVG**  
+AndroidSVG is a SVG parser and renderer for Android  
 Version: 1.2.1  
 Page: https://code.google.com/p/androidsvg/  
 
-- **ToggleButton**  
-
-> ToggleButton Widget For Android Developers  
+> **ToggleButton**  
+ToggleButton Widget For Android Developers  
 Page: https://android-arsenal.com/details/1/1158  
 
-- **EventBus**  
-
-> EventBus is publish/subscribe event bus optimized for Android. Simplifies the communication between components  
+> **EventBus**  
+EventBus is publish/subscribe event bus optimized for Android. Simplifies the communication between components  
 Version: 2.4.0  
 Page: https://github.com/greenrobot/EventBus  
 
-- **ButterKnife**  
-
-> Field and method binding for Android views which uses annotation processing to generate boilerplate code for you  
+> **ButterKnife**  
+Field and method binding for Android views which uses annotation processing to generate boilerplate code for you  
 Version: 6.1.0  
 Page: https://github.com/JakeWharton/butterknife  
 
 **JavaScript libraries**
 
-- **Justgage**  
-
-> JustGage is a handy JavaScript plugin for generating and animating nice & clean dashboard gauges. It is based on Raphaël library for vector drawing.  
+> **Justgage**  
+JustGage is a handy JavaScript plugin for generating and animating nice & clean dashboard gauges. It is based on Raphaël library for vector drawing.  
 Version: February 16, 2014  
 Home page: http://justgage.com/\#setup  
 
 **NodeJS modules:**  
 
-- **onoff**  
-
-> GPIO access and interrupt detection with io.js or Node.js on Linux boards like the BeagleBone, BeagleBone Black, Raspberry Pi, or Raspberry Pi 2.  
+> **onoff**  
+GPIO access and interrupt detection with io.js or Node.js on Linux boards like the BeagleBone, BeagleBone Black, Raspberry Pi, or Raspberry Pi 2.  
 Version: 1.0.2  
 Page: https://github.com/fivdi/onoff  
 
-- **serialport**  
-
-> It provides a very simple interface to the low level serial port code necessary to program Arduino chipsets, X10 wireless communications, or even the rising Z-Wave and Zigbee standards  
+> **serialport**  
+It provides a very simple interface to the low level serial port code necessary to program Arduino chipsets, X10 wireless communications, or even the rising Z-Wave and Zigbee standards  
 Version: 1.6.1  
 Page: https://github.com/voodootikigod/node-serialport  
 
-- **sqlite3**  
-
-> Asynchronous, non-blocking SQLite3 bindings for Node.js.  
+> **sqlite3**  
+Asynchronous, non-blocking SQLite3 bindings for Node.js.  
 Version: 3.0.5  
 Page: https://github.com/mapbox/node-sqlite3  
 
 **RESOURCES**
 
-- **SVG icons:**  
-
-> Page: http://www.flaticon.com/free-icon/mountain-cycling\_37961  
+> **SVG icons:**  
+Page: http://www.flaticon.com/free-icon/mountain-cycling\_37961  
 Icon made by Freepik from www.flaticon.com
 
-- **Fonts:**  
-
-> Font Awesome gives you scalable vector icons that can instantly be customized: size, color, drop shadow, and anything that can be done with the power of CSS  
+> **Fonts:**  
+Font Awesome gives you scalable vector icons that can instantly be customized: size, color, drop shadow, and anything that can be done with the power of CSS  
 Version: 4.3.0  
 Home page: http://fortawesome.github.io/Font-Awesome/
