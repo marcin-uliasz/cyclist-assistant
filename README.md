@@ -73,18 +73,17 @@ On the login form, user enters his username, password and selects one bicycle fr
 
 Username has to be entered in a first place, so that bicycle list can be generated in the background:
 
-<img src="./media/image26.png" width="32%" />
+<img src="./media/image26.png" width="32%"/>
 
 ### 2.2.3 Dashboard
 
 Dashboard is the graphical interface, displaying multiple parameters during bicycle trip (ride). All those parameters relates to *current* bicycle trip and are present in picture below:
 
-<img src="./media/image29.png" width="32%" />
+<img src="./media/image29.png" width="32%"/>
 
 After pressing circle button with horizontal bars, we can see the menu dialog:
 
-<img src="./media/image31.png" width="32%" />
-
+<img src="./media/image31.png" width="32%"/>  
 
 **Speed**
 
@@ -195,34 +194,36 @@ If current bicycle speed is greater than the limit, then speed warning message a
 Statistics are divided into two sections: current bicycle trip and all bicycles trip. 
 Current bicycle trip section contains trip time, average speed, max speed and max cadence.
 
-<img src="./media/image34.png" width="32%" />
+<img src="./media/image34.png" width="32%"/>
 
 All bicycle trips sections contains all above mentioned parameters, as well as total distance.
 
 ### 2.2.5 Settings
 
-Settings are divided into four sections: currently selected bicycle’s, bicycles’, cyclist’s profile and slope sensor’s section. All settings are discussed in details in sections A – F.
+Settings are divided into four sections: currently selected bicycle’s, bicycles’, cyclist’s profile and slope sensor’s section. All settings are discussed in details in sections A – H.
 
-<img src="./media/image35.png" width="32%" />
+<img src="./media/image35.png" width="32%"/>
 
 **A) Bicycle is loaded with bags**
 
 Toggle allowing user to select whether his bicycle is loaded with bags or not. This setting reflects displaying gear usage suggestions and cyclist’s calories consumption.
 
-<img src="./media/image36.png" width="32%" />
+<img src="./media/image36.png" width="32%"/>
 
 When bicycle is loaded with bag it is heavier. This fact causes that calories consumption is higher and “use lower gear” suggestion will appear earlier on less steep terrain.
 
 **B) Change bicycle**
 
 Field allowing user to change his current bicycle.  
-(Assuming system is enabled and user placed RaspberryPi board and smartphone on another bicycle).
+(Assuming system is enabled and user placed RaspberryPi board and smartphone on another bicycle).  
 After touching the field, confirmation dialog appears:  
+
 <img src="./media/image39.png" width="32%"/>  
 
 When user will touch **No** dialog will be closed and no further action will be taken.  
 When user will touch **Yes**, dialog with bicycles list of current user will appear, as it is showed below:  
-<img src="./media/image41.png" width="32%" />  
+
+<img src="./media/image41.png" width="32%"/>  
 
 After selecting certain bicycle dashboard and statistics of current trip will be reset. 
 Server on RaspberryPi will start measuring parameters taking into account details of newly selected bicycle  
@@ -231,131 +232,147 @@ Server on RaspberryPi will start measuring parameters taking into account detail
 **C) Manage bicycles**
 
 Manage bicycles form allows user to add new bicycles, edit and remove existing ones:
-<img src="./media/image47.png" width="32%" />
 
-User can open this form, by touching **Manage** button:
-<img src="./media/image45.png" width="32%" />
+<img src="./media/image47.png" width="32%"/>  
 
-Bicycle marked as green is currently selected:
-<img src="./media/image51.png" width="32%" />
-<img src="./media/image55.png" width="32%" />
+User can open this form, by touching **Manage** button:  
 
+<img src="./media/image45.png" width="32%"/>  
 
+Bicycle marked as green is currently selected:  
 
-1.  <img src="./media/image57.png" width="168" height="94" />**Show tabs names**
+<img src="./media/image51.png" width="32%"/>  
 
-<span id="_Toc416783253" class="anchor"></span>User can decide, whether tabs names should be visible or not. When they are visible, then currently visible tab is highlighted. Tabs names are also touchable.
-Hiding tabs, user can gain some space for the graphical interface.
+<img src="./media/image55.png" width="32%"/>
 
-1.  <img src="./media/image59.png" width="165" height="119" />**Edit profile**
+**D) Show tabs names**  
 
-<span id="_Toc416783257" class="anchor"></span>User has got an option for editing his profile.
-In order to open edit form, he has to touch
-**Edit** button (**Picture 3.2**)
+<img src="./media/image57.png" width="32%"/>  
 
-<img src="./media/image60.png" width="235" height="220" /><img src="./media/image61.png" width="217" height="428" />
+User can decide, whether tabs names should be visible or not.  
+When they are visible, then currently visible tab is highlighted. Tabs names are also touchable.  
+Hiding tabs, user can gain some space for the graphical interface.  
 
-**
-**
+**E) Edit profile**  
 
-1.  <img src="./media/image62.png" width="159" height="105" />**Remove profile**
+<img src="./media/image59.png" width="32%"/>
 
-<span id="_Toc416783261" class="anchor"></span>User has got an option to remove his profile. After touching remove button, profile, statistics and all bicycles of current user will be removed. After successful removal,
-the screen in **Picture 3.7** is visible.
+User has got an option for editing his profile. In order to open edit form, he has to touch **Edit** button.  
 
-<span id="_Toc416783264" class="anchor"></span><img src="./media/image65.png" width="159" height="151" /><img src="./media/image67.png" width="316" height="426" />
+<img src="./media/image60.png" width="32%"/>  
 
-1.  <img src="./media/image68.png" width="160" height="110" />**Calibrate slope sensor**
+<img src="./media/image61.png" width="32%"/>
 
-<span id="_Toc416783267" class="anchor"></span>Slope sensor is a simplification for the accelerometer and magnetometer sensors, located in a smartphone, which are used to calculate the slope of a terrain. Slope is based on the position of a smartphone. When user place the smartphone on his bicycle’s handlebar, accelerometer and magnetometer sensors can be used to calculate a slope of a terrain.
+**F) Remove profile**  
 
-<span id="_Toc416783268" class="anchor"></span>User, in order to see the screen of the smartphone, during cycling, will place it at certain angle. Such angle will false the real slope of a terrain. Calibrate function is available in order to provide the correct value of a slope, even if the smartphone is placed on a handlebar at an angle. Before a user can calibrate the slope sensor, he needs to make sure that the smartphone is placed at the right, comfortable angle and the angle won’t be changed during cycling. Once the smartphone is placed correctly, user needs to find perfectly flat area (for example a floor in a house), then he can calibrate the sensor. Calibration will set slope to 0%, previous value will be remembered and subtracted from current value, every time it will change. In other words, percentage offset will be applied.
+<img src="./media/image62.png" width="32%"/>
 
-1.  <img src="./media/image70.png" width="157" height="109" />**Reset slope sensor**
+User has got an option to remove his profile.  
 
-<span id="_Toc416783271" class="anchor"></span>After slope sensor calibration user can always reset slope sensor. Resetting will remove a percentage offset and slope sensor will output the real values.
+<img src="./media/image65.png" width="32%"/>  
 
-**
-**
+After touching remove button, profile, statistics and all bicycles of current user will be removed.  
+After successful removal, the screen shown below is visible:  
 
-## 2. Hardware design
+<img src="./media/image67.png" width="32%"/>  
 
-### 2.1 Circuit diagrams**
+**G) Calibrate slope sensor**  
 
-Circuit diagram on **Figure 1.7** demonstrates the construction of the device capable of doing computation, actuation and sensing. Embedding all electronic components into a bicycle, what are present on the diagram, would make a bicycle the real Thing, according to IoT definition, but for needs of project the author placed them in a plastic case, which is situated on a bicycle’s frame.
+<img src="./media/image68.png" width="32%"/>  
+
+Slope sensor is a simplification for the accelerometer and magnetometer sensors, located in a smartphone, which are used to calculate the slope of a terrain. Slope is based on the position of a smartphone. When user place the smartphone on his bicycle’s handlebar, accelerometer and magnetometer sensors can be used to calculate a slope of a terrain.
+
+>User, in order to see the screen of the smartphone, during cycling, will place it at certain angle. Such angle will false the real slope of a terrain. Calibrate function is available in order to provide the correct value of a slope, even if the smartphone is placed on a handlebar at an angle. Before a user can calibrate the slope sensor, he needs to make sure that the smartphone is placed at the right, comfortable angle and the angle won’t be changed during cycling. Once the smartphone is placed correctly, user needs to find perfectly flat area (for example a floor in a house), then he can calibrate the sensor. Calibration will set slope to 0%, previous value will be remembered and subtracted from current value, every time it will change. In other words, percentage offset will be applied.  
+
+**H) Reset slope sensor**  
+
+<img src="./media/image70.png" width="32%"/>
+
+After slope sensor calibration user can always reset slope sensor.  
+Resetting will remove a percentage offset and slope sensor will output the real values.  
+
+## 3. Hardware design
+
+### 3.1 Circuit diagrams
+
+Circuit diagram shown below demonstrates the construction of the device capable of doing computation, actuation and sensing. Embedding all electronic components into a bicycle, what are present on the diagram, would make a bicycle the real Thing, according to IoT definition, but for needs of project the author placed them in a plastic case, which is situated on a bicycle’s frame.
 
 <img src="./media/image3.png" width="66%"/>
 
-**Figures 1.8, 1.9** and **2.0** demonstrates how the device functions in different cases.
+Next 3 diagrams demonstrates how the device functions in different cases.  
 
-<img src="./media/image4.png" width="66%"/>
+The device batteries are charged by electrical current source – a dynamo. The device is disabled. Bicycle is going.  
 
-On **Figure 1.8**, the device batteries are charged by electrical current source – a dynamo. The device is disabled. Bicycle is going.
+<img src="./media/image4.png" width="66%"/>  
 
-<img src="./media/image5.png" width="66%"/>
+The device is connected with dynamo and is enabled. Batteries are not charged. Bicycle is going.  
 
-On **Figure 1.9** the device is connected with dynamo and is enabled. Batteries are not charged. Bicycle is going.
+<img src="./media/image5.png" width="66%"/>  
 
-<img src="./media/image6.png" width="66%"/>
+The device is enabled and powered by the batteries. Bicycle is not going.  
 
-On **Figure 2.0** the device is enabled and powered by the batteries. Bicycle is not going.
+<img src="./media/image6.png" width="66%"/>  
 
 Batteries play important role in the device, because they allow to work the device, regardless of bicycle state (going / not going).
 
 The project required connecting two reed switches into the RaspberryPi board.
-The reed switch is an electrical switch operated by an applied magnetic field.
+The reed switch is an electrical switch operated by an applied magnetic field.  
 
-![](./media/image7.png)
+<img src="./media/image7.png" width="32%"/>  
 
 First reed switch is required to monitor speed, distance and time of a bicycle trip.
 Second reed switch is required to monitor cadence.
-Combination of two reed switches allows also for calculation of gears ratio: gear inches.
+Combination of two reed switches allows also for calculation of gears ratio: gear inches.  
 
-**Figure 2.1** is a circuit diagram demonstrating, how reed swithces are connected with the RaspberryPi GPIO.
+Below is a circuit diagram demonstrating, how reed swithces are connected with the RaspberryPi GPIO:  
 
-![](./media/image8.png)
+<img src="./media/image8.png" width="66%"/>
 
-### 2.2 GPIO**
+### 3.2 GPIO
 
-![](./media/image9.png)
+<img src="./media/image9.png" width="32%"/>  
 
 GPIO is the interface for communication between components of a computer system, such as a microprocessor or various peripherals. Outputs (pins) of such a device can serve both as inputs and outputs and are usually configurable. GPIO pins are often grouped in ports.
 
-![](./media/image11.png)
+<img src="./media/image11.png" width="32%"/>  
 
 
 
 
-1.  <span id="_Toc416783272" class="anchor"></span>**Hardware implementation**
+## 4. Hardware implementation
 
-    1.  <span id="_Toc416783273" class="anchor"></span>**Parts**
+### 4.1 Parts 
 
-> <span id="_Toc416783274" class="anchor"></span>Parts used in a project are specified in **Appendix I**.
+List of hardware and parts used in the project:  
 
-1.  <span id="_Toc416783275" class="anchor"></span>**RaspberryPi board (computer platform)**
+<img src="./media/image73.png" width="90%"/>
 
-> <span id="_Toc416783276" class="anchor"></span>Project required the author to place the RaspberryPi board in a plastic case, together with the batteries and the voltage regulator. The author had to modify the original cables of reed switches, so that they could be connected to the GPIO pins on the RaspberryPi board. Bluetooth dongle was modified as well – it was soldered with external antenna.
->
-> <span id="_Toc416783277" class="anchor"></span>Plastic case was attached to the bicycle.
->
-> <span id="_Toc416783278" class="anchor"></span>Reed switches and magnets was placed on the one spoke of front bicycle wheel and on the arm of crank. Cables of reed switches were connected to the plastic case via Molex sockets.
->
-> <span id="_Toc416783279" class="anchor"></span>Described photo of the RaspberryPi, connected with another components is in **Appendix IX**.
 
-1.  <span id="_Toc416783280" class="anchor"></span>**Smartphone**
 
-> <span id="_Toc416783281" class="anchor"></span>Smartphone model used in a project was Samsung Galaxy GT-I9100.
->
-> <span id="_Toc416783282" class="anchor"></span>The smartphone was placed on a bicycle’s handlebar, in a special holder.
+### 4.2 RaspberryPi board (computer platform)
 
-<span id="_Toc416783284" class="anchor"></span>**Appendix I -** List of hardware and parts used in the project
+Project required to place the RaspberryPi board in a plastic case, together with the batteries and the voltage regulator. The author had to modify the original cables of reed switches, so that they could be connected to the GPIO pins on the RaspberryPi board. Bluetooth dongle was modified as well – it was soldered with external antenna.  
 
-<img src="./media/image73.png" width="561" height="837" />**
-**
+Plastic case was attached to the bicycle.  
 
-<span id="_Toc416783285" class="anchor"></span>**Appendix II -** Third party libraries, resources and tools used in
+Reed switches and magnets was placed on the one spoke of front bicycle wheel and on the arm of crank. Cables of reed switches were connected to the plastic case via Molex sockets.  
 
-<span id="_Toc416783286" class="anchor"></span>the project
+<img src="./media/image75.png" width="90%"/>
+
+
+
+### 4.3 Smartphone
+
+Smartphone model used in a project was Samsung Galaxy GT-I9100.  
+The smartphone was placed on a bicycle’s handlebar, in a special holder.
+
+
+
+
+
+## Appendix  
+
+Third party libraries, resources and tools used in the project:
 
 **LIBRARIES**
 
@@ -458,9 +475,3 @@ Icon made by Freepik from www.flaticon.com
 **“**Font Awesome gives you scalable vector icons that can instantly be customized: size, color, drop shadow, and anything that can be done with the power of CSS**”**
 
 Version: 4.3.0
-
-**Appendix IX –** Description of RaspberryPi board connected with
-
-other components inside the plastic case
-
-<img src="./media/image75.png" width="566" height="657" />
