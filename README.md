@@ -1,100 +1,13 @@
-1.  <span id="_Toc416783116" class="anchor"></span>**Software design**
-
-    1.  <span id="_Toc416783117" class="anchor"></span>**System description**
+1  **System description**
 
 The system developed by the author is the system for cyclists, which allow them to monitor the cyclist parameters (speed, distance, cadence, calories usage, trip time).
 A cyclist can view those parameters on his smartphone. In order to view such data, cyclist needs to install an Android application. The name of the application is Cyclist Assistant. As the name suggest, application provides some assistance during cycling. The assistance in this context are messages displayed on smartphone’s screen, suggesting the cyclist gear usage, depending on various factors. Those factors are a bicycle type, a current gear, a current slope of the terrain. The application offers cyclists an additional functionality. Cyclist can create multiple accounts, add multiple bicycles and view statistics of a current and all trips.
 
-1.  <span id="_Toc416783118" class="anchor"></span>**Requirement analysis**
+2.  **Hardware design**
 
-<span id="_Toc416783119" class="anchor"></span>Some requirements derive from similar systems available on the market.
+2.1 **Circuit diagrams**
 
-<span id="_Toc416783120" class="anchor"></span>The author possess Sigma Bicycle computer and analysis of that device, allowed the author to come up with some requirements.
-
-<span id="_Toc416783121" class="anchor"></span>Another requirements was found after system features suggestions from software engineers from Emutex company.
-
-<span id="_Toc416783122" class="anchor"></span>Below subchapters summarise all identified functional and non-functional requirements.
-
-1.  <span id="_Toc416783123" class="anchor"></span>**Functional requirements**
-
--   <span id="_Toc416783124" class="anchor"></span>cyclist needs to view current speed of bicycle
-
--   <span id="_Toc416783125" class="anchor"></span>cyclist needs to view current cadence
-
--   <span id="_Toc416783126" class="anchor"></span>cyclist needs to know current slope of terrain
-
--   <span id="_Toc416783127" class="anchor"></span>cyclist needs to view distance covered during current trip
-
--   <span id="_Toc416783128" class="anchor"></span>cyclist needs to view calories used during current trip
-
--   <span id="_Toc416783129" class="anchor"></span>cyclist needs to be notified about gear usage recommendation
-
--   <span id="_Toc416783130" class="anchor"></span>cyclist needs to know is his cadence optimal
-
--   <span id="_Toc416783131" class="anchor"></span>cyclist needs to know, when he exceed speed limit for his type of bicycle
-
--   <span id="_Toc416783132" class="anchor"></span>cyclist needs to view total statistics
-
--   <span id="_Toc416783133" class="anchor"></span>cyclist may have multiple bicycles
-
--   <span id="_Toc416783134" class="anchor"></span>system should let multiple cyclists use the same bicycle
-
--   <span id="_Toc416783135" class="anchor"></span>system should let cyclist to manage his bicycles
-
--   <span id="_Toc416783136" class="anchor"></span>cyclist should be able to switch between his bicycles, without logging out or exiting application
-
-    1.  <span id="_Toc416783137" class="anchor"></span>**Non-functional requirements**
-
-<!-- -->
-
--   <span id="_Toc416783138" class="anchor"></span>system should be portable; cyclist needs to be able to place the system on another bicycle easily
-
--   <span id="_Toc416783139" class="anchor"></span>system should work without external power source as long as possible
-
--   <span id="_Toc416783140" class="anchor"></span>system should be fast; values on a screen should be updated at least every 500ms
-
--   <span id="_Toc416783141" class="anchor"></span>system storage should be persistent; data should survive after system is turned off
-
-**
-**
-
-1.  <span id="_Toc416783142" class="anchor"></span>**Use case design**
-
-    1.  <span id="_Toc416783143" class="anchor"></span>**Actors**
-
-<span id="_Toc416783144" class="anchor"></span>Cyclist is the only actor in the system.
-
-1.  <span id="_Toc416783145" class="anchor"></span>**Use case diagram**
-
-<span id="_Toc416783146" class="anchor"></span><img src="./media/image1.png" width="565" height="726" />**
-**
-
-1.  <span id="_Toc416783147" class="anchor"></span>**Database design**
-
-<span id="_Toc416783148" class="anchor"></span>Database is SQLite \*.db file. Database is located on RaspberryPi SD card.
-
-<span id="_Toc416783149" class="anchor"></span>Server working on RaspberryPi uses that database directly.
-
-<span id="_Toc416783150" class="anchor"></span>Android Cyclist Assistant application uses that database indirectly (via the server). Cyclist Assistant neither use any database on Android system nor shared preferences feature.
-
-1.  <span id="_Toc416783151" class="anchor"></span>**Database tables**
-
-<span id="_Toc416783152" class="anchor"></span>Database contains three tables, related each other, by id of user.![](./media/image2.png)
-
-1.  <span id="_Toc416783154" class="anchor"></span>**Class diagrams**
-
-<span id="_Toc416783155" class="anchor"></span>Class diagram for Cyclist Assistant application is in **Appendix VII.**
-
-<span id="_Toc416783156" class="anchor"></span>Class diagram for server application is in **Appendix V.**
-
-**
-**
-
-1.  <span id="_Toc416783157" class="anchor"></span>**Hardware design**
-
-    1.  <span id="_Toc416783158" class="anchor"></span>**Circuit diagrams**
-
-<span id="_Toc416783159" class="anchor"></span>Circuit diagram on **Figure 1.7** demonstrates the construction of the device capable of doing computation, actuation and sensing. Embedding all electronic components into a bicycle, what are present on the diagram, would make a bicycle the real Thing, according to IoT definition, but for needs of project the author placed them in a plastic case, which is situated on a bicycle’s frame.
+Circuit diagram on **Figure 1.7** demonstrates the construction of the device capable of doing computation, actuation and sensing. Embedding all electronic components into a bicycle, what are present on the diagram, would make a bicycle the real Thing, according to IoT definition, but for needs of project the author placed them in a plastic case, which is situated on a bicycle’s frame.
 
 ![](./media/image3.png)
 
@@ -111,11 +24,11 @@ On **Figure 2.0** the device is enabled and powered by the batteries. Bicycle is
 
 Batteries play important role in the device, because they allow to work the device, regardless of bicycle state (going / not going).
 
-<img src="./media/image4.png" width="529" height="392" />
+<img src="./media/image4.png"/>
 
-<img src="./media/image5.png" width="529" height="389" />
+<img src="./media/image5.png"/>
 
-<img src="./media/image6.png" width="529" height="388" />
+<img src="./media/image6.png"/>
 
 **
 **
