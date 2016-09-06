@@ -1,4 +1,6 @@
 
+<link rel="stylesheet" href="./media/style.css">
+
 <img src="./media/image16.png" width="32%"/> 
 <img src="./media/image33.png" width="32%"/> 
 <img src="./media/image34.png" width="32%"/>
