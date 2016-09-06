@@ -22,21 +22,21 @@ In different cases the smartphone and the RaspberryPi board can be seen as a cli
 
 ### 2.1.1 Client – Server
 
-![](./media/image12.png)
+<img src="./media/image12.png" width="90%"/>
 
 ### 2.1.2 Peer to Peer
 
-![](./media/image13.png)
+<img src="./media/image13.png" width="90%"/>
 
 ## 2.2 Application features
 
-![](./media/image14.png)**Connecting to server**
+After launching the application, it checks, does the smartphone, on which the application is running, have Bluetooth module. If module is not available, dialog informing user, that application cannot function properly, will appear. Otherwise, if Bluetooth is available, application enables it in background. After enabling Bluetooth, process of establishing connection to the server on RaspberryPi board starts:
 
-<span id="_Toc416783172" class="anchor"></span>After launching the application, it checks, does the smartphone, on which the application is running, have Bluetooth module. If module is not available, dialog informing user, that application cannot function properly, will appear. Otherwise, if Bluetooth is available, application enables it in background. After enabling Bluetooth, process of establishing connection to the server on RaspberryPi board starts, what is demonstrated in the **Picture 1.3**.
+<img src="./media/image14.png" width="32%"/>
 
-<img src="./media/image15.png" width="216" height="478" />
+Problem with server (RaspberryPi is disabled or RaspberryPi is enabled, but server did not start yet) will cause an error and displaying message, as shown below:
 
-Problem with server (RaspberryPi is disabled or RaspberryPi is enabled, but server did not start yet) will cause an error and displaying message, as shown in the **Picture 1.4**.
+<img src="./media/image15.png" width="32%"/>
 
 If connection with server was established, proper message informs user about that fact – **Picture 1.5**.**
 **
