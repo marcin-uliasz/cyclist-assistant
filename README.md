@@ -318,7 +318,7 @@ Batteries play important role in the device, because they allow to work the devi
 The project required connecting two reed switches into the RaspberryPi board.
 The reed switch is an electrical switch operated by an applied magnetic field.  
 
-<img src="./media/image7.png" width="32%"/>  
+<img src="./media/image7.jpeg" width="32%"/>  
 
 First reed switch is required to monitor speed, distance and time of a bicycle trip.
 Second reed switch is required to monitor cadence.
@@ -326,18 +326,15 @@ Combination of two reed switches allows also for calculation of gears ratio: gea
 
 Below is a circuit diagram demonstrating, how reed swithces are connected with the RaspberryPi GPIO:  
 
-<img src="./media/image8.png" width="66%"/>
+<img src="./media/image8.jpg" width="66%"/>
 
 ### 3.2 GPIO
 
-<img src="./media/image9.png" width="32%"/>  
+<img src="./media/image9.jpeg" width="32%"/>  
 
 GPIO is the interface for communication between components of a computer system, such as a microprocessor or various peripherals. Outputs (pins) of such a device can serve both as inputs and outputs and are usually configurable. GPIO pins are often grouped in ports.
 
-<img src="./media/image11.png" width="32%"/>  
-
-
-
+<img src="./media/image11.jpeg" width="32%"/>  
 
 ## 4. Hardware implementation
 
@@ -346,8 +343,6 @@ GPIO is the interface for communication between components of a computer system,
 List of hardware and parts used in the project:  
 
 <img src="./media/image73.png" width="90%"/>
-
-
 
 ### 4.2 RaspberryPi board (computer platform)
 
@@ -359,119 +354,90 @@ Reed switches and magnets was placed on the one spoke of front bicycle wheel and
 
 <img src="./media/image75.png" width="90%"/>
 
-
-
 ### 4.3 Smartphone
 
 Smartphone model used in a project was Samsung Galaxy GT-I9100.  
 The smartphone was placed on a bicycle’s handlebar, in a special holder.
 
-
-
-
-
 ## Appendix  
 
-Third party libraries, resources and tools used in the project:
+Third party libraries, resources and tools used in the project:  
 
 **LIBRARIES**
 
-1.  Android libraries:
+**Android libraries:** 
 
-    1.  User interface:
+- **PagerSlidingTabStrip**
 
-        1.  **PagerSlidingTabStrip**
+“Interactive paging indicator widget, compatible with the ViewPager from the Android Support Library.”  
+Version: 1.0.9  
+Page: https://github.com/jpardogo/PagerSlidingTabStrip  
 
-> **“**Interactive paging indicator widget, compatible with the ViewPager from the Android Support Library.**”**
->
-> Version: 1.0.9
->
-> Page: https://github.com/jpardogo/PagerSlidingTabStrip
+- **Android-Bootstrap**
 
-1.  **Android-Bootstrap**
+Bootstrap based style for Android  
+Page: https://github.com/Bearded-Hen/Android-Bootstrap  
 
-> Bootstrap based style for Android
->
-> Page: https://github.com/Bearded-Hen/Android-Bootstrap
+- **AndroidSVG**  
 
-1.  **AndroidSVG**
+AndroidSVG is a SVG parser and renderer for Android  
+Version: 1.2.1  
+Page: https://code.google.com/p/androidsvg/  
 
-> **“**AndroidSVG is a SVG parser and renderer for Android**”**
->
-> Version: 1.2.1
-> Page: https://code.google.com/p/androidsvg/
+- **ToggleButton**  
 
-1.  **ToggleButton**
+ToggleButton Widget For Android Developers  
+Page: https://android-arsenal.com/details/1/1158  
 
-> **“**ToggleButton Widget For Android Developers**”**
->
-> Page: https://android-arsenal.com/details/1/1158
+- **EventBus**  
 
-1.  Utils:
+EventBus is publish/subscribe event bus optimized for Android. Simplifies the communication between components  
+Version: 2.4.0  
+Page: https://github.com/greenrobot/EventBus  
 
-    1.  **EventBus**
+- **ButterKnife**  
 
-> **“**EventBus is publish/subscribe event bus optimized for Android. Simplifies the communication between components**”**
->
-> Version: 2.4.0
->
-> Page: https://github.com/greenrobot/EventBus
+Field and method binding for Android views which uses annotation processing to generate boilerplate code for you  
+Version: 6.1.0  
+Page: https://github.com/JakeWharton/butterknife  
 
-1.  **ButterKnife**
+**JavaScript libraries**
 
-> **“**Field and method binding for Android views which uses annotation processing to generate boilerplate code for you**”**
->
-> Version: 6.1.0
->
-> Page: https://github.com/JakeWharton/butterknife
+- **Justgage**  
 
-1.  JavaScript libraries
+JustGage is a handy JavaScript plugin for generating and animating nice & clean dashboard gauges. It is based on Raphaël library for vector drawing.  
+Version: February 16, 2014  
+Home page: http://justgage.com/\#setup  
 
-    1.  **Justgage**
+**NodeJS modules:**  
 
-**“**JustGage is a handy JavaScript plugin for generating and animating nice & clean dashboard gauges. It is based on Raphaël library for vector drawing.**”**
+- **onoff**  
 
-Version: February 16, 2014
-Home page: http://justgage.com/\#setup
+GPIO access and interrupt detection with io.js or Node.js on Linux boards like the BeagleBone, BeagleBone Black, Raspberry Pi, or Raspberry Pi 2.  
+Version: 1.0.2  
+Page: https://github.com/fivdi/onoff  
 
-1.  NodeJS modules:
+- **serialport**  
 
-    1.  **onoff**
+It provides a very simple interface to the low level serial port code necessary to program Arduino chipsets, X10 wireless communications, or even the rising Z-Wave and Zigbee standards  
+Version: 1.6.1  
+Page: https://github.com/voodootikigod/node-serialport  
 
-**“**GPIO access and interrupt detection with io.js or Node.js on Linux boards like the BeagleBone, BeagleBone Black, Raspberry Pi, or Raspberry Pi 2.**”**
+- **sqlite3**  
 
-Version: 1.0.2
-
-Page: https://github.com/fivdi/onoff
-
-1.  **serialport**
-
-**“**It provides a very simple interface to the low level serial port code necessary to program Arduino chipsets, X10 wireless communications, or even the rising Z-Wave and Zigbee standards**”**
-
-Version: 1.6.1
-
-Page: https://github.com/voodootikigod/node-serialport
-
-1.  **sqlite3**
-
-**“**Asynchronous, non-blocking SQLite3 bindings for Node.js.**”**
-
-Version: 3.0.5
-
-Page: https://github.com/mapbox/node-sqlite3
+Asynchronous, non-blocking SQLite3 bindings for Node.js.  
+Version: 3.0.5  
+Page: https://github.com/mapbox/node-sqlite3  
 
 **RESOURCES**
 
-1.  SVG icons:
-
-    1.  Page: http://www.flaticon.com/free-icon/mountain-cycling\_37961
-
+- **SVG icons:**  
+- 
+Page: http://www.flaticon.com/free-icon/mountain-cycling\_37961  
 Icon made by Freepik from www.flaticon.com
 
-1.  Fonts:
+- **Fonts:**  
 
-    1.  Home page: http://fortawesome.github.io/Font-Awesome/
-
-**“**Font Awesome gives you scalable vector icons that can instantly be customized: size, color, drop shadow, and anything that can be done with the power of CSS**”**
-
-Version: 4.3.0
+Font Awesome gives you scalable vector icons that can instantly be customized: size, color, drop shadow, and anything that can be done with the power of CSS  
+Version: 4.3.0  
+Home page: http://fortawesome.github.io/Font-Awesome/
