@@ -1,88 +1,76 @@
-1  **System description**
+**1. System description**
 
 The system developed by the author is the system for cyclists, which allow them to monitor the cyclist parameters (speed, distance, cadence, calories usage, trip time).
 A cyclist can view those parameters on his smartphone. In order to view such data, cyclist needs to install an Android application. The name of the application is Cyclist Assistant. As the name suggest, application provides some assistance during cycling. The assistance in this context are messages displayed on smartphone’s screen, suggesting the cyclist gear usage, depending on various factors. Those factors are a bicycle type, a current gear, a current slope of the terrain. The application offers cyclists an additional functionality. Cyclist can create multiple accounts, add multiple bicycles and view statistics of a current and all trips.
 
-2.  **Hardware design**
+**2. Hardware design**
 
-2.1 **Circuit diagrams**
+**2.1 Circuit diagrams**
 
 Circuit diagram on **Figure 1.7** demonstrates the construction of the device capable of doing computation, actuation and sensing. Embedding all electronic components into a bicycle, what are present on the diagram, would make a bicycle the real Thing, according to IoT definition, but for needs of project the author placed them in a plastic case, which is situated on a bicycle’s frame.
 
 ![](./media/image3.png)
 
-**
-**
-
 **Figures 1.8, 1.9** and **2.0** demonstrates how the device functions in different cases.
+
+![](./media/image4.png)
 
 On **Figure 1.8**, the device batteries are charged by electrical current source – a dynamo. The device is disabled. Bicycle is going.
 
+![](./media/image5.png)
+
 On **Figure 1.9** the device is connected with dynamo and is enabled. Batteries are not charged. Bicycle is going.
+
+![](./media/image6.png)
 
 On **Figure 2.0** the device is enabled and powered by the batteries. Bicycle is not going.
 
 Batteries play important role in the device, because they allow to work the device, regardless of bicycle state (going / not going).
 
-<img src="./media/image4.png"/>
-
-<img src="./media/image5.png"/>
-
-<img src="./media/image6.png"/>
-
-**
-**
-
-The project requires connecting two reed switches into the RaspberryPi board.
-
+The project required connecting two reed switches into the RaspberryPi board.
 The reed switch is an electrical switch operated by an applied magnetic field.
 
+![](./media/image7.png)
+
 First reed switch is required to monitor speed, distance and time of a bicycle trip.
-
 Second reed switch is required to monitor cadence.
-
-<img src="./media/image7.jpeg" width="226" height="155" />Combination of two reed switches allows also for calculation of gears ratio: gear inches.
+Combination of two reed switches allows also for calculation of gears ratio: gear inches.
 
 **Figure 2.1** is a circuit diagram demonstrating, how reed swithces are connected with the RaspberryPi GPIO.
 
-<img src="./media/image8.jpg" width="297" height="360" />
+![](./media/image8.png)
 
-1.  <img src="./media/image9.jpeg" width="275" height="315" />**GPIO**
+**2.2 GPIO**
+
+![](./media/image9.png)
 
 GPIO is the interface for communication between components of a computer system, such as a microprocessor or various peripherals. Outputs (pins) of such a device can serve both as inputs and outputs and are usually configurable. GPIO pins are often grouped in ports.
 
-<img src="./media/image11.jpeg" width="273" height="178" />
+![](./media/image11.png)
 
-1.  <span id="_Toc416783162" class="anchor"></span>**Software implementation**
+**3 Software implementation**
 
-> <span id="_Toc416783163" class="anchor"></span>The whole system for cyclist consist of the Android application, running on a smartphone and server application running on a computer platform, placed on a bicycle. Android application is written in Java language. Server application is written in JavaScript, which runs with NodeJS – **“**cross-platform runtime environment for server-side and networking application**”.
-> **(Code snippet for server class is in **Appendix IV**).
->
-> <span id="_Toc416783164" class="anchor"></span>The name of a computer platform is RaspberryPi – system on chip platform, mentioned in section **1.2.4**.
->
-> <span id="_Toc416783165" class="anchor"></span>Android application communicates with server application via Bluetooth RFCOMM protocol. Messages are serialized JSON objects. JSON objects sent from smartphone application contain method name to be invoked on a RaspberryPi and additional parameters. The structure of JSON object complies with JSON-RPC specification. Server application binds with SQLite3 database and uses third party libraries for serial port and GPIO access.
-> (List of all third party libraries and resources is in **Appendix II**).
+The whole system for cyclist consist of the Android application, running on a smartphone and server application running on a computer platform, placed on a bicycle. Android application is written in Java language. Server application is written in JavaScript, which runs with NodeJS – **“**cross-platform runtime environment for server-side and networking application**”.
 
-1.  <span id="_Toc416783166" class="anchor"></span>**Architectural patterns**
+The name of a computer platform is RaspberryPi – system on chip platform.
 
-> <span id="_Toc416783167" class="anchor"></span>In different cases the smartphone and the RaspberryPi board can be seen as a client and server or as two peers.
+Android application communicates with server application via Bluetooth RFCOMM protocol. Messages are serialized JSON objects. JSON objects sent from smartphone application contain method name to be invoked on a RaspberryPi and additional parameters. The structure of JSON object complies with JSON-RPC specification. Server application binds with SQLite3 database and uses third party libraries for serial port and GPIO access.
 
-**
-**
+**3.1 Architectural patterns**
 
-1.  <span id="_Toc416783168" class="anchor"></span>**Client – Server**
+In different cases the smartphone and the RaspberryPi board can be seen as a client and server or as two peers.
 
-<img src="./media/image12.png" width="425" height="844" />**
-**
+**3.1.1 Client – Server**
 
-1.  <span id="_Toc416783169" class="anchor"></span>**Peer to Peer**
+![](./media/image12.png)
 
-<img src="./media/image13.png" width="415" height="902" />**
-**
+**3.1.2 Peer to Peer**
 
-1.  <span id="_Toc416783170" class="anchor"></span>**Cyclist Assistant features**
+![](./media/image13.png)
 
-    1.  <img src="./media/image14.png" width="216" height="484" />**Connecting to server**
+**3.2 Application features**
+
+![](./media/image14.png)**Connecting to server**
 
 <span id="_Toc416783172" class="anchor"></span>After launching the application, it checks, does the smartphone, on which the application is running, have Bluetooth module. If module is not available, dialog informing user, that application cannot function properly, will appear. Otherwise, if Bluetooth is available, application enables it in background. After enabling Bluetooth, process of establishing connection to the server on RaspberryPi board starts, what is demonstrated in the **Picture 1.3**.
 
