@@ -85,6 +85,7 @@ After pressing circle button with horizontal bars, we can see the menu dialog:
 
 <img src="./media/image31.png" width="32%" />
 
+
 **Speed**
 
 When a magnet attached to a spoke passes speed sensor, placed on bicycle it is understood as one bicycle wheel’s rotation.
@@ -94,8 +95,9 @@ Speed is calculated on RaspberryPi:
 
 > SpeedSensor**.prototype.**calculateSpeed **=** **function()**
 > **{**
->       **return** **(this.**perimeter **/** **this.**getTickTime**())** **\*** 3.6**;**
+> **return** **(this.**perimeter **/** **this.**getTickTime**())** **\*** 3.6**;**
 > **};**
+
 
 **Cadence**
 
@@ -106,8 +108,9 @@ Cadence is calculated on RaspberryPi:
 
 > CadenceSensor**.prototype.**calculateCadence **=** **function()**
 > **{**
->       **return** 60000 **/** **this.**getTickTime**();**
+> **return** 60000 **/** **this.**getTickTime**();**
 > **};**
+
 
 **Distance**
 
@@ -121,8 +124,9 @@ Distance is calculated on RaspberryPi:
 > //distance is available
 > SpeedSensor**.prototype.**getDistance **=** **function()**
 > **{**
->       **return** **this.**distance **/** 1000**;**
+> **return** **this.**distance **/** 1000**;**
 > **};**
+
 
 **Gear inches**
 
@@ -132,20 +136,22 @@ Gear inches are calculated on RaspberryPi:
 
 > **function** calculateGearInches**(**speed**,** cadence**)**
 > **{**
->       **var** gearInches **=** **(**speed **\*** 656.167979**)** **/** **(**cadence **\*** Math**.**PI**);**
+> **var** gearInches **=** **(**speed **\*** 656.167979**)** **/** **(**cadence **\*** Math**.**PI**);**
 >
->       **if** **(**gearInches **===** Infinity **||** isNaN**(**gearInches**))**
->       **{**
->               gearInches **=** 0**;**
->       **}**
->
->       **return** gearInches**;**
+> **if** **(**gearInches **===** Infinity **||** isNaN**(**gearInches**))**
+> **{**
+> gearInches **=** 0**;**
 > **}**
+>
+> **return** gearInches**;**
+> **}**
+
 
 **Slope**
 
 Slope is calculated on the smartphone, using accelerometer and magnetometer sensor.
 Slope unit is percent \[%\].
+
 
 **Calories**
 
@@ -153,67 +159,65 @@ Calories are calculated using special formula.
 Calorie unit is Kcal.
 Calories are calculated on the smartphone, because they depend on slope value, which can be calculated easiest on the smartphone.
 
-<img src="./media/image33.png" width="586" height="723" />
+<img src="./media/image33.png" width="32%" />
+
 
 **Gear icon and corresponding message**
 
-<span id="_Toc416783210" class="anchor"></span>Each bicycle type has set in code recommended gear inches ranges for different type of slopes. These information and current slope and gear inches are compared every 500ms and result of the comparison are three possible messages:
+Each bicycle type has set in code recommended gear inches ranges for different type of slopes. These information and current slope and gear inches are compared every 500ms and result of the comparison are three possible messages:
 
-> <span id="_Toc416783211" class="anchor"></span>- Use lower gear
->
-> <span id="_Toc416783212" class="anchor"></span>- Use higher gear
->
-> <span id="_Toc416783213" class="anchor"></span>- You are using optimal gear
+- Use lower gear
+- Use higher gear
+- You are using optimal gear
 
-<span id="_Toc416783214" class="anchor"></span>**Cadence icon and corresponding message**
 
-<span id="_Toc416783215" class="anchor"></span>Experience of many cyclists indicates that optimal cadence range is 70 – 100.
+**Cadence icon and corresponding message**
 
-<span id="_Toc416783216" class="anchor"></span>(http://inl.org/cycling/advice/cadence/)
+Experience of many cyclists indicates that optimal cadence range is 70 – 100. (http://inl.org/cycling/advice/cadence/)
 
-<span id="_Toc416783217" class="anchor"></span>Function responsible for cadence messages, returns three possible messages:
-
+Function responsible for cadence messages, returns three possible messages:
 -   <span id="_Toc416783218" class="anchor"></span>If current cadence is less than 70: Cadence is to low
-
 -   <span id="_Toc416783219" class="anchor"></span>If current cadence is between 70 and 100: Cadence is optimal
-
 -   <span id="_Toc416783220" class="anchor"></span>If current cadence is greater than 100: Cadence is to high
 
-<span id="_Toc416783221" class="anchor"></span>**Calories icon**
 
-<span id="_Toc416783222" class="anchor"></span>When icon is red, calories are actively consumed (cyclist is pedalling).
+**Calories icon**
 
-<span id="_Toc416783223" class="anchor"></span>When icon is green calories are not actively consumed (cyclist is not pedalling, but bicycle is going).
+When icon is red, calories are actively consumed (cyclist is pedalling).
 
-<span id="_Toc416783224" class="anchor"></span>**Speed warning icon and corresponding message**
+When icon is green calories are not actively consumed (cyclist is not pedalling, but bicycle is going).
 
-<span id="_Toc416783225" class="anchor"></span>Each type of bicycle has speed limit specified. If current bicycle speed is greater than the limit, then speed warning message appears and speed icon becomes red.**
-**
 
-1.  <span id="_Toc416783226" class="anchor"></span>**Statistics**
+**Speed warning icon and corresponding message**
 
-<span id="_Toc416783227" class="anchor"></span>Statistics are divided into two sections: current bicycle trip and all bicycles trip. Current bicycle trip section contains trip time, average speed, max speed and max cadence.
+Each type of bicycle has speed limit specified. If current bicycle speed is greater than the limit, then speed warning message appears and speed icon becomes red.
 
-<img src="./media/image34.png" width="507" height="433" />All bicycle trips sections contains all above mentioned parameters, as well as total distance.
+### 2.2.4 Statistics
 
-**
-**
+Statistics are divided into two sections: current bicycle trip and all bicycles trip. 
+Current bicycle trip section contains trip time, average speed, max speed and max cadence.
 
-1.  <span id="_Toc416783229" class="anchor"></span>**Settings**
+<img src="./media/image34.png" width="32%" />
 
-<span id="_Toc416783230" class="anchor"></span>Settings are divided into four sections: currently selected bicycle’s, bicycles’, cyclist’s profile and slope sensor’s section. All settings are discussed in details in sections A – F.
+All bicycle trips sections contains all above mentioned parameters, as well as total distance.
 
-<img src="./media/image35.png" width="566" height="625" />
+### 2.2.5 Settings
 
-1.  <img src="./media/image36.png" width="162" height="88" />**Bicycle is loaded with bags**
+Settings are divided into four sections: currently selected bicycle’s, bicycles’, cyclist’s profile and slope sensor’s section. All settings are discussed in details in sections A – F.
 
-<span id="_Toc416783233" class="anchor"></span>Toggle allowing user to select whether his bicycle is loaded with bags or not. This setting reflects displaying gear usage suggestions and cyclist’s calories consumption.
+<img src="./media/image35.png" width="32%" />
 
-<span id="_Toc416783234" class="anchor"></span>When bicycle is loaded with bag it is heavier. This fact causes that calories consumption is higher and “use lower gear” suggestion will appear earlier on less steep terrain.
+**A) Bicycle is loaded with bags**
 
-1.  <img src="./media/image38.png" width="160" height="103" />**Change bicycle**
+Toggle allowing user to select whether his bicycle is loaded with bags or not. This setting reflects displaying gear usage suggestions and cyclist’s calories consumption.
 
-<span id="_Toc416783237" class="anchor"></span>Field allowing user to change his current bicycle. (Assuming system is enabled and user placed RaspberryPi board and smartphone on another bicycle).
+<img src="./media/image36.png" width="32%" />
+
+When bicycle is loaded with bag it is heavier. This fact causes that calories consumption is higher and “use lower gear” suggestion will appear earlier on less steep terrain.
+
+**B) Change bicycle**
+
+Field allowing user to change his current bicycle. (Assuming system is enabled and user placed RaspberryPi board and smartphone on another bicycle).
 
 <span id="_Toc416783238" class="anchor"></span>After touching the field, confirmation dialog showed in
 
