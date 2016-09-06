@@ -1,4 +1,7 @@
-<img src="./media/image16.png" width="32%"/> <img src="./media/image33.png" width="32%"/> <img src="./media/image34.png" width="32%"/>
+
+<img src="./media/image16.png" width="32%"/> 
+<img src="./media/image33.png" width="32%"/> 
+<img src="./media/image34.png" width="32%"/>
 
 **1. System description**
 
@@ -11,19 +14,19 @@ A cyclist can view those parameters on his smartphone. In order to view such dat
 
 Circuit diagram on **Figure 1.7** demonstrates the construction of the device capable of doing computation, actuation and sensing. Embedding all electronic components into a bicycle, what are present on the diagram, would make a bicycle the real Thing, according to IoT definition, but for needs of project the author placed them in a plastic case, which is situated on a bicycle’s frame.
 
-![](./media/image3.png)
+<img src="./media/image3.png" width="66%"/>
 
 **Figures 1.8, 1.9** and **2.0** demonstrates how the device functions in different cases.
 
-![](./media/image4.png)
+<img src="./media/image4.png" width="66%"/>
 
 On **Figure 1.8**, the device batteries are charged by electrical current source – a dynamo. The device is disabled. Bicycle is going.
 
-![](./media/image5.png)
+<img src="./media/image5.png" width="66%"/>
 
 On **Figure 1.9** the device is connected with dynamo and is enabled. Batteries are not charged. Bicycle is going.
 
-![](./media/image6.png)
+<img src="./media/image6.png" width="66%"/>
 
 On **Figure 2.0** the device is enabled and powered by the batteries. Bicycle is not going.
 
