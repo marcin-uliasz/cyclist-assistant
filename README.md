@@ -3,12 +3,12 @@
 <img src="./media/image33.png" width="32%"/> 
 <img src="./media/image34.png" width="32%"/>
 
-## 1. System description
+# 1. System description
 
 The system developed by the author is the system for cyclists, which allow them to monitor the cyclist parameters (speed, distance, cadence, calories usage, trip time).
 A cyclist can view those parameters on his smartphone. In order to view such data, cyclist needs to install an Android application. The name of the application is Cyclist Assistant. As the name suggest, application provides some assistance during cycling. The assistance in this context are messages displayed on smartphone’s screen, suggesting the cyclist gear usage, depending on various factors. Those factors are a bicycle type, a current gear, a current slope of the terrain. The application offers cyclists an additional functionality. Cyclist can create multiple accounts, add multiple bicycles and view statistics of a current and all trips.
 
-## 3 Software implementation**
+# 2. Software implementation
 
 The whole system for cyclist consist of the Android application, running on a smartphone and server application running on a computer platform, placed on a bicycle. Android application is written in Java language. Server application is written in JavaScript, which runs with NodeJS – **“**cross-platform runtime environment for server-side and networking application**”.
 
@@ -16,19 +16,19 @@ The name of a computer platform is RaspberryPi – system on chip platform.
 
 Android application communicates with server application via Bluetooth RFCOMM protocol. Messages are serialized JSON objects. JSON objects sent from smartphone application contain method name to be invoked on a RaspberryPi and additional parameters. The structure of JSON object complies with JSON-RPC specification. Server application binds with SQLite3 database and uses third party libraries for serial port and GPIO access.
 
-**3.1 Architectural patterns**
+## 2.1 Architectural patterns
 
 In different cases the smartphone and the RaspberryPi board can be seen as a client and server or as two peers.
 
-**3.1.1 Client – Server**
+### 2.1.1 Client – Server
 
 ![](./media/image12.png)
 
-**3.1.2 Peer to Peer**
+### 2.1.2 Peer to Peer
 
 ![](./media/image13.png)
 
-**3.2 Application features**
+## 2.2 Application features
 
 ![](./media/image14.png)**Connecting to server**
 
