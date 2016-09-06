@@ -151,12 +151,10 @@ function calculateGearInches(speed, cadence)
 }
 ```
 
-
 **Slope**
 
 Slope is calculated on the smartphone, using accelerometer and magnetometer sensor.
 Slope unit is percent \[%\].
-
 
 **Calories**
 
@@ -164,38 +162,33 @@ Calories are calculated using special formula.
 Calorie unit is Kcal.
 Calories are calculated on the smartphone, because they depend on slope value, which can be calculated easiest on the smartphone.
 
-<img src="./media/image33.png" width="32%" />
-
-
 **Gear icon and corresponding message**
 
 Each bicycle type has set in code recommended gear inches ranges for different type of slopes. These information and current slope and gear inches are compared every 500ms and result of the comparison are three possible messages:
-
 - Use lower gear
 - Use higher gear
 - You are using optimal gear
-
 
 **Cadence icon and corresponding message**
 
 Experience of many cyclists indicates that optimal cadence range is 70 – 100. (http://inl.org/cycling/advice/cadence/)
 
 Function responsible for cadence messages, returns three possible messages:
--   <span id="_Toc416783218" class="anchor"></span>If current cadence is less than 70: Cadence is to low
--   <span id="_Toc416783219" class="anchor"></span>If current cadence is between 70 and 100: Cadence is optimal
--   <span id="_Toc416783220" class="anchor"></span>If current cadence is greater than 100: Cadence is to high
-
+- If current cadence is less than 70: Cadence is to low
+- If current cadence is between 70 and 100: Cadence is optimal
+- If current cadence is greater than 100: Cadence is to high
 
 **Calories icon**
 
 When icon is red, calories are actively consumed (cyclist is pedalling).
-
 When icon is green calories are not actively consumed (cyclist is not pedalling, but bicycle is going).
-
 
 **Speed warning icon and corresponding message**
 
-Each type of bicycle has speed limit specified. If current bicycle speed is greater than the limit, then speed warning message appears and speed icon becomes red.
+Each type of bicycle has speed limit specified. 
+If current bicycle speed is greater than the limit, then speed warning message appears and speed icon becomes red.
+
+<img src="./media/image33.png" width="32%"/>
 
 ### 2.2.4 Statistics
 
@@ -224,29 +217,29 @@ When bicycle is loaded with bag it is heavier. This fact causes that calories co
 
 Field allowing user to change his current bicycle. (Assuming system is enabled and user placed RaspberryPi board and smartphone on another bicycle).
 
-<span id="_Toc416783238" class="anchor"></span>After touching the field, confirmation dialog showed in
+After touching the field, confirmation dialog appears:
+<img src="./media/image39.png" width="32%"/> 
 
-<span id="_Toc416783241" class="anchor"></span><img src="./media/image39.png" width="160" height="171" />**Picture 2.5** appears. When user will touch **No** dialog will be closed and no further action will be taken.
+When user will touch **No** dialog will be closed and no further action will be taken.
+When user will touch **Yes**, dialog with bicycles list of current user will appear, as it is showed below:
+<img src="./media/image41.png" width="32%" />
 
-<span id="_Toc416783242" class="anchor"></span>When user will touch **Yes**, dialog with bicycles list of current user will appear, as it is showed in **Picture 2.6**.
+After selecting certain bicycle dashboard and statistics of current trip will be reset. 
+Server on RaspberryPi will start measuring parameters taking into account details of newly selected bicycle (wheel perimeter, bicycle type and weight).
 
-<span id="_Toc416783245" class="anchor"></span><img src="./media/image41.png" width="160" height="188" />After selecting certain bicycle dashboard and statistics of
-current trip will be reset. Server on RaspberryPi will start
-measuring parameters taking into account details of newly
-selected bicycle (wheel perimeter, bicycle type and weight).
+**C) Manage bicycles**
 
-1.  <img src="./media/image45.png" width="159" height="113" />**Manage bicycles**
+Manage bicycles form allows user to add new bicycles, edit and remove existing ones:
+<img src="./media/image47.png" width="32%" />
 
-<img src="./media/image47.png" width="190" height="378" />Manage bicycles form allows user to add new bicycles, edit and remove
-existing ones. User can open this form, by touching **Manage** button (**Picture 2.7**).
-Bicycle marked as green is currently selected.
+User can open this form, by touching **Manage** button:
+<img src="./media/image45.png" width="32%" />
 
-<img src="./media/image51.png" width="188" height="473" />
+Bicycle marked as green is currently selected:
+<img src="./media/image51.png" width="32%" />
+<img src="./media/image55.png" width="32%" />
 
-> <span id="_Toc416783250" class="anchor"></span><img src="./media/image55.png" width="188" height="480" />
 
-**
-**
 
 1.  <img src="./media/image57.png" width="168" height="94" />**Show tabs names**
 
