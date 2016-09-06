@@ -1,3 +1,5 @@
+![](./media/image16.png) ![](./media/image33.png) ![](./media/image34.png)
+
 **1. System description**
 
 The system developed by the author is the system for cyclists, which allow them to monitor the cyclist parameters (speed, distance, cadence, calories usage, trip time).
