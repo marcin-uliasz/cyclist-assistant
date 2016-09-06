@@ -215,17 +215,18 @@ When bicycle is loaded with bag it is heavier. This fact causes that calories co
 
 **B) Change bicycle**
 
-Field allowing user to change his current bicycle. (Assuming system is enabled and user placed RaspberryPi board and smartphone on another bicycle).
+Field allowing user to change his current bicycle.  
+(Assuming system is enabled and user placed RaspberryPi board and smartphone on another bicycle).
+After touching the field, confirmation dialog appears:  
+<img src="./media/image39.png" width="32%"/>  
 
-After touching the field, confirmation dialog appears:
-<img src="./media/image39.png" width="32%"/> 
-
-When user will touch **No** dialog will be closed and no further action will be taken.
-When user will touch **Yes**, dialog with bicycles list of current user will appear, as it is showed below:
-<img src="./media/image41.png" width="32%" />
+When user will touch **No** dialog will be closed and no further action will be taken.  
+When user will touch **Yes**, dialog with bicycles list of current user will appear, as it is showed below:  
+<img src="./media/image41.png" width="32%" />  
 
 After selecting certain bicycle dashboard and statistics of current trip will be reset. 
-Server on RaspberryPi will start measuring parameters taking into account details of newly selected bicycle (wheel perimeter, bicycle type and weight).
+Server on RaspberryPi will start measuring parameters taking into account details of newly selected bicycle  
+(wheel perimeter, bicycle type and weight).  
 
 **C) Manage bicycles**
 
