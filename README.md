@@ -10,7 +10,7 @@ A cyclist can view those parameters on his smartphone. In order to view such dat
 
 # 2. Software implementation
 
-The whole system for cyclist consist of the Android application, running on a smartphone and server application running on a computer platform, placed on a bicycle. Android application is written in Java language. Server application is written in JavaScript, which runs with NodeJS – **“**cross-platform runtime environment for server-side and networking application**”.
+The whole system for cyclist consist of the Android application, running on a smartphone and server application running on a computer platform, placed on a bicycle. Android application is written in Java language. Server application is written in JavaScript, which runs with NodeJS – cross-platform runtime environment for server-side and networking application”.
 
 The name of a computer platform is RaspberryPi – system on chip platform.
 
@@ -38,58 +38,54 @@ Problem with server (RaspberryPi is disabled or RaspberryPi is enabled, but serv
 
 <img src="./media/image15.png" width="32%"/>
 
-If connection with server was established, proper message informs user about that fact – **Picture 1.5**.**
-**
+If connection with server was established, proper message informs user about that fact:
 
-1.  <img src="./media/image16.png" width="217" height="484" />**New user**
+<img src="./media/image16.png" width="32%"/>
 
-<span id="_Toc416783174" class="anchor"></span>After application established connection with the server, user can login or create new account (add new user).
+### 2.2.1 New user
 
-<span id="_Toc416783175" class="anchor"></span>New user form is divided into two sections:
-a profile and a bicycle. Profile section contains fields for entering username, password and user’s weight. Correct weight is needed for calculating calories consumption, during bicycle rides.
+After application established connection with the server, user can login or create new account (add new user).
+New user form is divided into two sections: a profile and a bicycle. 
 
-<span id="_Toc416783176" class="anchor"></span>Bicycle section allows to enter all relevant information about user’s bicycle. After logging in, user can add more bicycles, so specifying name of bicycles, by populating *bicycle name
-*field let user distinguish multiple bicycles.
+Profile section contains fields for entering username, password and user’s weight. 
+Correct weight is needed for calculating calories consumption, during bicycle rides.
 
-<span id="_Toc416783177" class="anchor"></span>Selecting bicycle type is needed for algorithm generating gear usage suggestions and speed warnings.
+Bicycle section allows to enter all relevant information about user’s bicycle. 
+After logging in, user can add more bicycles, so specifying name of bicycles, by populating bicycle name field let user distinguish multiple bicycles.
 
-<span id="_Toc416783178" class="anchor"></span>Entering bicycle weight is needed for correct calculation of calories consumed by user.
+Selecting bicycle type is needed for algorithm generating gear usage suggestions and speed warnings.
 
-<span id="_Toc416783179" class="anchor"></span>After selecting rim type and tire size, wheel perimeter field is populated with relevant value, so user does not have to measure his bicycle’s wheel perimeter.
+Entering bicycle weight is needed for correct calculation of calories consumed by user.
 
-<span id="_Toc416783180" class="anchor"></span>Correct wheel perimeter is needed for speed calculation.
+After selecting rim type and tire size, wheel perimeter field is populated with relevant value, so user does not have to measure his bicycle’s wheel perimeter.
 
-<span id="_Toc416783181" class="anchor"></span>Wheel perimeter field is editable, so user can change the value, even after the value was inserted into that field automatically.
+Correct wheel perimeter is needed for speed calculation.
 
-All those fields are visible in the **Picture 1.6
-**<img src="./media/image17.png" width="490" height="824" />
+Wheel perimeter field is editable, so user can change the value, even after the value was inserted into that field automatically.
 
-**
-**
+All those fields are visible below:
 
-1.  <span id="_Toc416783182" class="anchor"></span>**Login**
+<img src="./media/image17.png" width="32%"/>
 
-<span id="_Toc416783183" class="anchor"></span>On the login form, user enters his username, password and selects one bicycle from the list of his all bicycles.
+### 2.2.2 Login
 
-<span id="_Toc416783184" class="anchor"></span>Username has to be entered in a first place, so that bicycle list can be generated in the background – **Picture 1.7**
+On the login form, user enters his username, password and selects one bicycle from the list of his all bicycles.
 
-<img src="./media/image26.png" width="489" height="458" />
+Username has to be entered in a first place, so that bicycle list can be generated in the background:
 
-**
-**
+<img src="./media/image26.png" width="32%" />
 
-1.  <span id="_Toc416783185" class="anchor"></span>**Dashboard**
+### 2.2.3 Dashboard
 
-<span id="_Toc416783186" class="anchor"></span>Dashboard is the graphical interface, displaying multiple parameters during bicycle trip (ride). All those parameters are specified in **Picture 1.8** and relates to *current* bicycle trip.
+Dashboard is the graphical interface, displaying multiple parameters during bicycle trip (ride). All those parameters relates to *current* bicycle trip and are present in picture below:
 
-<span id="_Toc416783187" class="anchor"></span>**Picture 2.0** demonstrates exemplary messages and icons visible during cycling.
+<img src="./media/image29.png" width="32%" />
 
-<img src="./media/image29.png" width="565" height="546" />
+After pressing circle button with horizontal bars, we can see the menu dialog:
 
-<img src="./media/image31.png" width="160" height="223" />
+<img src="./media/image31.png" width="32%" />
 
-**
-Speed**
+**Speed**
 
 When a magnet attached to a spoke passes speed sensor, placed on bicycle it is understood as one bicycle wheel’s rotation.
 
