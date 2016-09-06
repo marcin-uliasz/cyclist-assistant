@@ -93,10 +93,10 @@ Speed unit is km/h.
 
 Speed is calculated on RaspberryPi:
 
-`SpeedSensor.prototype.calculateSpeed = function()`  
-`{`  
-`return (this.perimeter / this.getTickTime()) \ 3.6;`  
-`};`  
+> `SpeedSensor.prototype.calculateSpeed = function()`  
+> `{`  
+> `return (this.perimeter / this.getTickTime()) \ 3.6;`  
+> `};`  
 
 **Cadence**
 
