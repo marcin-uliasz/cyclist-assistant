@@ -88,104 +88,74 @@ After pressing circle button with horizontal bars, we can see the menu dialog:
 **Speed**
 
 When a magnet attached to a spoke passes speed sensor, placed on bicycle it is understood as one bicycle wheel’s rotation.
-
-Speed is calculated using formula discussed in section **2.3.2.**
-
 Speed unit is km/h.
 
 Speed is calculated on RaspberryPi:
 
 > SpeedSensor**.prototype.**calculateSpeed **=** **function()**
->
 > **{**
->
-> **return** **(this.**perimeter **/** **this.**getTickTime**())** **\*** 3.6**;**
->
+>       **return** **(this.**perimeter **/** **this.**getTickTime**())** **\*** 3.6**;**
 > **};**
 
 **Cadence**
 
 When a magnet attached to crank’s arm passes cadence sensor, placed on bicycle it is understood as one bicycle crank’s revolution. Cadence is number of such revolutions per minute.
-
 Cadence unit is rpm.
 
 Cadence is calculated on RaspberryPi:
 
 > CadenceSensor**.prototype.**calculateCadence **=** **function()**
->
 > **{**
->
-> **return** 60000 **/** **this.**getTickTime**();**
->
+>       **return** 60000 **/** **this.**getTickTime**();**
 > **};**
 
-<span id="_Toc416783192" class="anchor"></span>**Distance**
+**Distance**
 
-<span id="_Toc416783193" class="anchor"></span>Distance unit is meter.
+Distance unit is meter.
 
-<span id="_Toc416783194" class="anchor"></span>Distance is calculated on RaspberryPi:
+Distance is calculated on RaspberryPi:
 
-> <span id="_Toc416783195" class="anchor"></span>//once magnet pass sensor this line of code is executed
+> //once magnet pass sensor this line of code is executed
+> classScope**.**distance **+=** classScope**.**perimeter**;**
 >
-> <span id="_Toc416783196" class="anchor"></span>classScope**.**distance **+=** classScope**.**perimeter**;**
->
-> <span id="_Toc416783197" class="anchor"></span>//distance is available
->
+> //distance is available
 > SpeedSensor**.prototype.**getDistance **=** **function()**
->
 > **{**
->
-> **return** **this.**distance **/** 1000**;**
->
+>       **return** **this.**distance **/** 1000**;**
 > **};**
 
-<span id="_Toc416783198" class="anchor"></span>**Gear inches**
+**Gear inches**
 
-<span id="_Toc416783199" class="anchor"></span>Gear inches is dimensionless. It is ratio.
+Gear inches is dimensionless. It is ratio.
 
-<span id="_Toc416783200" class="anchor"></span>Gear inches are calculated on RaspberryPi:
+Gear inches are calculated on RaspberryPi:
 
 > **function** calculateGearInches**(**speed**,** cadence**)**
->
 > **{**
+>       **var** gearInches **=** **(**speed **\*** 656.167979**)** **/** **(**cadence **\*** Math**.**PI**);**
 >
-> **var** gearInches **=** **(**speed **\*** 656.167979**)** **/** **(**cadence **\*** Math**.**PI**);**
+>       **if** **(**gearInches **===** Infinity **||** isNaN**(**gearInches**))**
+>       **{**
+>               gearInches **=** 0**;**
+>       **}**
 >
-> **if** **(**gearInches **===** Infinity **||** isNaN**(**gearInches**))**
->
-> **{**
->
-> gearInches **=** 0**;**
->
-> **}**
->
-> **return** gearInches**;**
->
+>       **return** gearInches**;**
 > **}**
 
-<span id="_Toc416783201" class="anchor"></span>**Slope**
+**Slope**
 
-<span id="_Toc416783202" class="anchor"></span>Slope is calculated on the smartphone, using accelerometer and magnetometer sensor.
+Slope is calculated on the smartphone, using accelerometer and magnetometer sensor.
+Slope unit is percent \[%\].
 
-<span id="_Toc416783203" class="anchor"></span>Slope unit is percent \[%\].
+**Calories**
 
-<span id="_Toc416783204" class="anchor"></span>**Calories**
-
-<span id="_Toc416783205" class="anchor"></span>Calories are calculated using formula described in section **2.3.3**
-
-<span id="_Toc416783206" class="anchor"></span>Calorie unit is Kcal.
-
-<span id="_Toc416783207" class="anchor"></span>Calories are calculated on the smartphone, because they depend on slope value, which can only be calculated on the smartphone.
-
-**
-**
+Calories are calculated using special formula.
+Calorie unit is Kcal.
+Calories are calculated on the smartphone, because they depend on slope value, which can be calculated easiest on the smartphone.
 
 <img src="./media/image33.png" width="586" height="723" />
 
-**
-**
-
-<span id="_Toc416783209" class="anchor"></span>**Gear icon and corresponding message**
+**Gear icon and corresponding message**
 
 <span id="_Toc416783210" class="anchor"></span>Each bicycle type has set in code recommended gear inches ranges for different type of slopes. These information and current slope and gear inches are compared every 500ms and result of the comparison are three possible messages:
 
