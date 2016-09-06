@@ -342,7 +342,7 @@ GPIO is the interface for communication between components of a computer system,
 
 List of hardware and parts used in the project:  
 
-<img src="./media/image73.png" width="90%"/>
+<img src="./media/image73.png" width="100%"/>
 
 ### 4.2 RaspberryPi board (computer platform)
 
