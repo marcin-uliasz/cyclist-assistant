@@ -93,10 +93,12 @@ Speed unit is km/h.
 
 Speed is calculated on RaspberryPi:
 
-> `SpeedSensor.prototype.calculateSpeed = function()`  
-> `{`  
-> `     return (this.perimeter / this.getTickTime()) \ 3.6;`  
-> `};`  
+```javascript
+SpeedSensor.prototype.calculateSpeed = function()  
+{ 
+    return (this.perimeter / this.getTickTime()) \ 3.6;  
+};
+```
 
 **Cadence**
 
@@ -105,11 +107,12 @@ Cadence unit is rpm.
 
 Cadence is calculated on RaspberryPi:
 
-> CadenceSensor**.prototype.**calculateCadence **=** **function()**
-> **{**
-> **return** 60000 **/** **this.**getTickTime**();**
-> **};**
-
+```javascript
+CadenceSensor.prototype.calculateCadence = function()
+{
+    return 60000 / this.getTickTime();
+};
+```
 
 **Distance**
 
@@ -117,15 +120,16 @@ Distance unit is meter.
 
 Distance is calculated on RaspberryPi:
 
-> //once magnet pass sensor this line of code is executed
-> classScope**.**distance **+=** classScope**.**perimeter**;**
->
-> //distance is available
-> SpeedSensor**.prototype.**getDistance **=** **function()**
-> **{**
-> **return** **this.**distance **/** 1000**;**
-> **};**
+```javascript
+//once magnet pass sensor this line of code is executed
+classScope.distance += classScope.perimeter;
 
+//distance is available
+SpeedSensor.prototype.getDistance = function()
+{
+    return this.distance / 1000;
+};
+```
 
 **Gear inches**
 
@@ -133,17 +137,19 @@ Gear inches is dimensionless. It is ratio.
 
 Gear inches are calculated on RaspberryPi:
 
-> **function** calculateGearInches**(**speed**,** cadence**)**
-> **{**
-> **var** gearInches **=** **(**speed **\*** 656.167979**)** **/** **(**cadence **\*** Math**.**PI**);**
->
-> **if** **(**gearInches **===** Infinity **||** isNaN**(**gearInches**))**
-> **{**
-> gearInches **=** 0**;**
-> **}**
->
-> **return** gearInches**;**
-> **}**
+```javascript
+function calculateGearInches(speed, cadence)
+{
+    var gearInches = (speed / 656.167979) / (cadence / Math.PI);
+
+    if (gearInches === Infinity || isNaN(gearInches))
+    {
+        gearInches = 0;
+    }
+
+    return gearInches;
+}
+```
 
 
 **Slope**
